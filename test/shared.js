@@ -1,12 +1,10 @@
-'use strict';
-
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { promisify } from 'node:util';
-import path from 'node:path';
-import { formatCharset, parseHeader, generateHeader, foldLine, parseNPluralFromHeadersSafely } from '../lib/shared.js';
 import { readFile as fsReadFile } from 'node:fs';
+import path from 'node:path';
+import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
+import { foldLine, formatCharset, generateHeader, parseHeader, parseNPluralFromHeadersSafely } from '../lib/shared.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -95,7 +93,8 @@ X-Poedit-SourceCharset: UTF-8`;
     });
 
     it('should fold at default length', () => {
-      const expected = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pretium ',
+      const expected = [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pretium ',
         'a nunc ac fringilla. Nulla laoreet tincidunt tincidunt. Proin tristique ',
         'vestibulum mauris non aliquam. Vivamus volutpat odio nisl, sed placerat ',
         'turpis sodales a. Vestibulum quis lectus ac elit sagittis sodales ac a ',

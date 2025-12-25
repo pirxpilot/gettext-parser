@@ -1,10 +1,10 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { promisify } from 'node:util';
-import path from 'node:path';
 import fs from 'node:fs';
-import * as gettextParser from '../index.js';
+import path from 'node:path';
+import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
+import * as gettextParser from '../index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -72,9 +72,11 @@ describe('PO Parser', () => {
 
       let parsed;
 
-      const stream = po.pipe(gettextParser.po.createParseStream({
-        initialTreshold: 800 // home many bytes to cache for parsing the header
-      }));
+      const stream = po.pipe(
+        gettextParser.po.createParseStream({
+          initialTreshold: 800 // home many bytes to cache for parsing the header
+        })
+      );
 
       stream.on('data', data => {
         parsed = data;
@@ -108,9 +110,11 @@ describe('PO Parser', () => {
         highWaterMark: 1 // ensure that any utf-8 sequences will be broken when streaming
       });
 
-      const stream = poStream.pipe(gettextParser.po.createParseStream({
-        initialTreshold: 800 // home many bytes to cache for parsing the header
-      }));
+      const stream = poStream.pipe(
+        gettextParser.po.createParseStream({
+          initialTreshold: 800 // home many bytes to cache for parsing the header
+        })
+      );
 
       stream.on('error', error => {
         assert.match(error.message, invalidKeyError);

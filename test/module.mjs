@@ -1,6 +1,6 @@
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { po, mo } from '../index.js';
+import { describe, it } from 'node:test';
+import { mo, po } from '../index.js';
 
 describe('esm module', () => {
   it('should allow named imports', () => {

@@ -1,7 +1,7 @@
-import * as poParser from './lib/poparser.js';
-import poCompiler from './lib/pocompiler.js';
-import moParser from './lib/moparser.js';
 import moCompiler from './lib/mocompiler.js';
+import moParser from './lib/moparser.js';
+import poCompiler from './lib/pocompiler.js';
+import * as poParser from './lib/poparser.js';
 
 export const po = {
   parse: poParser.parse,

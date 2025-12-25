@@ -1,11 +1,11 @@
-import { EOL } from 'node:os';
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { promisify } from 'node:util';
-import path from 'node:path';
 import fs from 'node:fs';
-import * as gettextParser from '../index.js';
+import { EOL } from 'node:os';
+import path from 'node:path';
+import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
+import * as gettextParser from '../index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
