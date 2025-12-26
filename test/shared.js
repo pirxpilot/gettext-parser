@@ -95,7 +95,8 @@ X-Poedit-SourceCharset: UTF-8`;
     });
 
     it('should fold at default length', () => {
-      const expected = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pretium ',
+      const expected = [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pretium ',
         'a nunc ac fringilla. Nulla laoreet tincidunt tincidunt. Proin tristique ',
         'vestibulum mauris non aliquam. Vivamus volutpat odio nisl, sed placerat ',
         'turpis sodales a. Vestibulum quis lectus ac elit sagittis sodales ac a ',

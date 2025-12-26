@@ -72,9 +72,11 @@ describe('PO Parser', () => {
 
       let parsed;
 
-      const stream = po.pipe(gettextParser.po.createParseStream({
-        initialTreshold: 800 // home many bytes to cache for parsing the header
-      }));
+      const stream = po.pipe(
+        gettextParser.po.createParseStream({
+          initialTreshold: 800 // home many bytes to cache for parsing the header
+        })
+      );
 
       stream.on('data', data => {
         parsed = data;
@@ -108,9 +110,11 @@ describe('PO Parser', () => {
         highWaterMark: 1 // ensure that any utf-8 sequences will be broken when streaming
       });
 
-      const stream = poStream.pipe(gettextParser.po.createParseStream({
-        initialTreshold: 800 // home many bytes to cache for parsing the header
-      }));
+      const stream = poStream.pipe(
+        gettextParser.po.createParseStream({
+          initialTreshold: 800 // home many bytes to cache for parsing the header
+        })
+      );
 
       stream.on('error', error => {
         assert.match(error.message, invalidKeyError);
