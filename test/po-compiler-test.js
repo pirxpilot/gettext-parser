@@ -1,11 +1,11 @@
-import { EOL } from 'node:os';
-import { promisify } from 'node:util';
-import path from 'node:path';
-import { readFile as fsReadFile } from 'node:fs';
-import { describe, it } from 'node:test';
 import assert from 'node:assert';
-import { po } from '../index.js';
+import { readFile as fsReadFile } from 'node:fs';
+import { EOL } from 'node:os';
+import path from 'node:path';
+import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
+import { po } from '../index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
