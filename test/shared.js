@@ -1,5 +1,3 @@
-'use strict';
-
 import assert from 'node:assert';
 import { readFile as fsReadFile } from 'node:fs';
 import path from 'node:path';
